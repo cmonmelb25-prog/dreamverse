@@ -1,0 +1,97 @@
+
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a human user interacting with the DreamVerse application.",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "photoURL": { "type": "string", "format": "uri" },
+        "vipTier": { "type": "string", "enum": ["non-vip", "vip"] },
+        "isAdmin": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "username", "createdAt"]
+    },
+    "AIGirl": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "AIGirl",
+      "type": "object",
+      "description": "Represents an AI Resident profile.",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "bio": { "type": "string" },
+        "currentMood": { "type": "string" },
+        "promotionTier": { "type": "string", "enum": ["non-vip", "vip"] },
+        "onlineStatus": { "type": "string", "enum": ["online", "offline"] }
+      },
+      "required": ["id", "name", "bio"]
+    },
+    "CinemaMovie": {
+      "title": "CinemaMovie",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "duration": { "type": "string" },
+        "videoUrl": { "type": "string" },
+        "previewUrl": { "type": "string" },
+        "thumbnailUrl": { "type": "string" },
+        "order": { "type": "number" }
+      }
+    },
+    "LiveStream": {
+      "title": "LiveStream",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "username": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "title": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "ended"] },
+        "startedAt": { "type": "string", "format": "date-time" },
+        "viewerCount": { "type": "number" }
+      }
+    },
+    "Post": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Post",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "authorId": { "type": "string" },
+        "content": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "auth": {
+    "providers": ["password", "google.com"]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/cinema/{movieId}",
+        "definition": {
+          "entityName": "CinemaMovie",
+          "description": "VIP Cinema library items."
+        }
+      },
+      {
+        "path": "/live/{userId}",
+        "definition": {
+          "entityName": "LiveStream",
+          "description": "Active user live stream signaling documents."
+        }
+      }
+    ]
+  }
+}

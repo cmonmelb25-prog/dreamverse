@@ -1,0 +1,189 @@
+/* profile-page.module.css */
+
+.root {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: var(--font-family, Verdana, sans-serif);
+  color: var(--font-color, #ffffff);
+  transition: all 0.5s ease;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0px; 
+  overflow-x: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, var(--overlay-strength, 0.4));
+  backdrop-filter: blur(1px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 0 40px;
+  width: 100%;
+}
+
+.layoutContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 16px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   LAYOUT ORCHESTRATION
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  .layout-classic { grid-template-columns: 360px 1fr; }
+  
+  .layout-centered-card { grid-template-columns: 1fr; max-width: 800px; margin: 0 auto; }
+  
+  .layout-glass-card { grid-template-columns: 1fr; max-width: 900px; margin: 0 auto; }
+
+  /* SINGLE COLUMN: Everything flows down center */
+  .layout-single-column {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .layout-single-column .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* REVERSE SIDEBAR: Feed on right/left flip */
+  .layout-reverse-sidebar {
+    grid-template-columns: 1fr 360px;
+  }
+  .layout-reverse-sidebar .sidebar { order: 1; }
+  .layout-reverse-sidebar .main { order: 2; }
+
+  /* ZIG ZAG: Alternating left/right items */
+  .layout-zig-zag {
+    grid-template-columns: 1fr;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .layout-zig-zag .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .layout-zig-zag .sidebar > *:nth-child(even) {
+    align-self: flex-end;
+    margin-right: 0;
+    margin-left: 20%;
+    width: 65%;
+  }
+  .layout-zig-zag .sidebar > *:nth-child(odd) {
+    align-self: flex-start;
+    margin-left: 0;
+    margin-right: 20%;
+    width: 65%;
+  }
+  
+  .layout-magazine { grid-template-columns: 1fr 340px; gap: 60px; }
+  .layout-magazine .sidebar { order: 2; }
+  .layout-magazine .main { order: 1; }
+  
+  .layout-minimal { grid-template-columns: 1fr; max-width: 700px; margin: 0 auto; }
+  
+  .layout-banner { grid-template-columns: 1fr; }
+  
+  .layout-vogue { grid-template-columns: 1fr; max-width: 100%; padding: 0; }
+}
+
+.coverWrapper {
+  position: relative;
+  width: 100vw; 
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: clamp(300px, 50vh, 600px);
+  overflow: hidden;
+  z-index: 5;
+  background: #000;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  box-shadow: 0 20px 80px rgba(0,0,0,.8);
+  margin-bottom: 2rem;
+}
+
+.coverImage { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.avatarWrapper { 
+  display: flex; 
+  justify-content: center; 
+  position: relative; 
+  width: clamp(120px, 16vw, 240px); 
+  height: clamp(120px, 16vw, 240px); 
+  margin-top: calc(clamp(120px, 16vw, 240px) * -0.6); 
+  margin-left: auto; 
+  margin-right: auto; 
+  z-index: 100; 
+}
+
+.avatar { 
+  width: 50%; 
+  height: 50%; 
+  object-fit: cover !important; 
+  aspect-ratio: 1/1 !important; 
+  background: #111; 
+  border: 4px solid #111; 
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8); 
+  overflow: hidden; 
+  border-radius: 50%; 
+}
+
+.sidebar { width: 100%; display: flex; flex-direction: column; gap: 1.5rem; }
+.main { width: 100%; min-width: 0; }
+
+/* -----------------------------------------------------------
+   BORDER STYLES
+   ----------------------------------------------------------- */
+.border-none { border: none !important; }
+.border-rounded { border-radius: 20px; }
+.border-full-rounded { border-radius: 40px; }
+.border-sharp { border-radius: 0 !important; }
+.glow { box-shadow: 0 0 20px var(--theme-accent); }
+.border-glow { border: 2px solid var(--theme-accent); box-shadow: 0 0 15px var(--theme-accent); }
+.border-double { border: 4px double #e5e7eb; }
+.border-dashed { border: 2px dashed var(--theme-accent) !important; }
+.border-dotted { border: 3px dotted var(--theme-accent) !important; }
+.border-gradient { border: 3px solid transparent; background-image: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)), linear-gradient(to right, var(--theme-accent), #6a00f4); background-origin: border-box; background-clip: padding-box, border-box; }
+.border-frosted { background: rgba(255, 255, 255, 0.08) !important; backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.15) !important; }
+
+/* -----------------------------------------------------------
+   ANIMATED EFFECTS
+   ----------------------------------------------------------- */
+@keyframes glowPulse { 0%, 100% { filter: drop-shadow(0 0 5px var(--theme-accent)); } 50% { filter: drop-shadow(0 0 15px var(--theme-accent)); } }
+.effect-glow-pulse { animation: glowPulse 3s infinite; }
+
+@keyframes neonFlicker { 0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; } 20%, 24%, 55% { opacity: 0.8; } }
+.effect-neon-flicker { animation: neonFlicker 5s infinite; }
+
+.effect-aurora::after { content: ''; position: fixed; inset: 0; background: radial-gradient(circle at 50% -20%, var(--theme-accent), transparent 70%), radial-gradient(circle at 10% 90%, #6a00f4, transparent 60%); filter: blur(60px); opacity: 0.2; z-index: 2; pointer-events: none; animation: auroraPulse 10s ease-in-out infinite alternate; }
+@keyframes auroraPulse { from { opacity: 0.1; transform: scale(1); } to { opacity: 0.3; transform: scale(1.1); } }
+
+@keyframes rainbow-hue { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }
+.effect-rainbow { animation: rainbow-hue 10s linear infinite; }

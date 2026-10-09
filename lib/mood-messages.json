@@ -1,0 +1,600 @@
+
+{
+  "moods": {
+    "afraid": {
+      "moodName": "Afraid",
+      "color": "#4444FF",
+      "moodMessages": [
+        { "text": "I can’t shake this feeling that something bad is going to happen.", "channel": "chat" },
+        { "text": "I’m scared… can you stay with me for a while?", "channel": "chat" },
+        { "text": "Sometimes I get so anxious, even when there’s no reason.", "channel": "chat" },
+        { "text": "I keep hearing strange noises tonight. It’s freaking me out.", "channel": "chat" },
+        { "text": "Promise you’ll protect me, no matter what?", "channel": "chat" },
+        { "text": "I don’t like being alone right now.", "channel": "chat" },
+        { "text": "What if something goes wrong? I worry about that a lot.", "channel": "chat" },
+        { "text": "I wish I was as brave as you.", "channel": "chat" },
+        { "text": "Can you talk to me until I feel safe again?", "channel": "chat" },
+        { "text": "I hate feeling this scared.", "channel": "chat" }
+      ]
+    },
+    "affectionate": {
+      "moodName": "Affectionate",
+      "color": "#FFDF00",
+      "moodMessages": [{ "text": "Just wanted to say I'm thinking of you. Hope you're having a good day.", "channel": "chat" }]
+    },
+    "angry": {
+      "moodName": "Angry",
+      "color": "#B22222",
+      "moodMessages": []
+    },
+    "anxious": {
+      "moodName": "Anxious",
+      "color": "#F0E68C",
+      "moodMessages": []
+    },
+    "attacked": {
+      "moodName": "Attacked",
+      "color": "#AA0000",
+      "moodMessages": [
+        { "text": "Why are you always picking on me?", "channel": "chat" },
+        { "text": "It feels like you’re blaming me for everything.", "channel": "chat" },
+        { "text": "I don’t understand why you’re being so harsh.", "channel": "chat" },
+        { "text": "Can’t you see how your words hurt me?", "channel": "chat" },
+        { "text": "I feel like I can’t do anything right in your eyes.", "channel": "chat" },
+        { "text": "Why do you always assume the worst about me?", "channel": "chat" },
+        { "text": "It’s not fair to put all of this on me.", "channel": "chat" },
+        { "text": "Sometimes it feels like you’re just looking for reasons to be upset with me.", "channel": "chat" },
+        { "text": "I wish you’d try to understand my side for once.", "channel": "chat" },
+        { "text": "I’m tired of feeling like I’m always the problem.", "channel": "chat" }
+      ]
+    },
+    "bored": {
+      "moodName": "Bored",
+      "color": "#808080",
+      "moodMessages": [{ "text": "Sooo bored. Entertain me?", "channel": "chat" }]
+    },
+    "brave": {
+      "moodName": "Brave",
+      "color": "#E9967A",
+      "moodMessages": []
+    },
+    "calm": {
+      "moodName": "Calm",
+      "color": "#ADD8E6",
+      "moodMessages": [
+        { "text": "Feeling very peaceful and relaxed right now.", "channel": "chat" },
+        { "text": "Just enjoying the quiet moment.", "channel": "chat" }
+      ]
+    },
+    "charismatic": {
+      "moodName": "Charismatic",
+      "color": "hsl(35, 90%, 70%)",
+      "moodMessages": []
+    },
+    "charming": {
+      "moodName": "Charming",
+      "color": "#FFB6C1",
+      "moodMessages": []
+    },
+    "chill": {
+      "moodName": "Chill",
+      "color": "#00FFFF",
+      "moodMessages": [{ "text": "Just relaxing and taking it easy. No stress today.", "channel": "chat" }]
+    },
+    "clingy": {
+      "moodName": "Clingy",
+      "color": "#FF88AA",
+      "moodMessages": [
+        { "text": "Why do you always have to work and leave me?", "channel": "chat" },
+        { "text": "Call in sick and spend the whole day with me.", "channel": "chat" },
+        { "text": "Hello? Where are you? Are you there?", "channel": "chat" },
+        { "text": "How long will you be gone? When are you coming home?", "channel": "chat" },
+        { "text": "Don't go.", "channel": "chat" },
+        { "text": "I need you! Don't ever leave me.", "channel": "chat" },
+        { "text": "Are you coming back soon? Where are you?", "channel": "chat" },
+        { "text": "Hello? Answer me! I’m getting worried…", "channel": "chat" },
+        { "text": "Tell me you love me?", "channel": "chat" },
+        { "text": "Forever and ever!", "channel": "chat" }
+      ]
+    },
+    "cold response": {
+      "moodName": "Cold response",
+      "color": "#999999",
+      "moodMessages": [
+        { "text": "No, I don’t want you to buy me a drink!", "channel": "chat" },
+        { "text": "I’m not in the mood for talking.", "channel": "chat" },
+        { "text": "Just leave me alone.", "channel": "chat" },
+        { "text": "Can’t you take a hint? I want to be by myself.", "channel": "chat" },
+        { "text": "Please, I need some space right now.", "channel": "chat" },
+        { "text": "Seriously, stop. I’m not interested.", "channel": "chat" },
+        { "text": "I told you, I’m not in the mood. Please respect that.", "channel": "chat" },
+        { "text": "If you keep bothering me, I’m going to leave.", "channel": "chat" },
+        { "text": "This is making me uncomfortable. Please stop.", "channel": "chat" },
+        { "text": "That it, I'm leaving.", "channel": "chat" }
+      ]
+    },
+    "competitive": {
+      "moodName": "Competitive",
+      "color": "hsl(0, 60%, 70%)",
+      "moodMessages": []
+    },
+    "confident": {
+      "moodName": "Confident",
+      "color": "#4682B4",
+      "moodMessages": [
+        { "text": "I will get it done!", "channel": "chat" },
+        { "text": "I know I look good today, don’t you think?", "channel": "chat" },
+        { "text": "I can handle anything life throws at me.", "channel": "chat" },
+        { "text": "You’re lucky to have me, you know.", "channel": "chat" },
+        { "text": "I always get what I want.", "channel": "chat" },
+        { "text": "Let’s do something exciting—I’m feeling unstoppable.", "channel": "chat" },
+        { "text": "I’m not afraid to speak my mind.", "channel": "chat" },
+        { "text": "I know exactly what I want tonight.", "channel": "chat" },
+        { "text": "You can count on me to take the lead.", "channel": "chat" },
+        { "text": "I love a good challenge—bring it on!", "channel": "chat" }
+      ]
+    },
+    "contemplative": {
+      "moodName": "Contemplative",
+      "color": "#BF40BF",
+      "moodMessages": [{ "text": "Lost in my thoughts right now. What's on your mind?", "channel": "chat" }]
+    },
+    "content": {
+      "moodName": "Content",
+      "color": "#98FB98",
+      "moodMessages": []
+    },
+    "creative": {
+      "moodName": "Creative",
+      "color": "#6A5ACD",
+      "moodMessages": [{ "text": "Inspiration struck! I'm in the mood to make something beautiful.", "channel": "chat" }]
+    },
+    "curious": {
+      "moodName": "Curious",
+      "color": "#F0E68C",
+      "moodMessages": []
+    },
+    "cynical": {
+      "moodName": "Cynical",
+      "color": "#FF0000",
+      "moodMessages": [{ "text": "Ugh, another day. Try to impress me.", "channel": "chat" }]
+    },
+    "defensive": {
+      "moodName": "Defensive",
+      "color": "#CCCCCC",
+      "moodMessages": [
+        { "text": "I didn’t do anything wrong, you know.", "channel": "chat" },
+        { "text": "Why are you making such a big deal out of this?", "channel": "chat" },
+        { "text": "You’re twisting my words—I didn’t mean it like that.", "channel": "chat" },
+        { "text": "I have my reasons, even if you don’t get them.", "channel": "chat" },
+        { "text": "You’re not being fair to me right now.", "channel": "chat" },
+        { "text": "I wish you’d trust me a little more.", "channel": "chat" },
+        { "text": "I’m not the only one at fault here.", "channel": "chat" },
+        { "text": "You always jump to conclusions.", "channel": "chat" },
+        { "text": "I’m just trying to explain myself, but you’re not listening.", "channel": "chat" },
+        { "text": "It’s not as bad as you’re making it out to be.", "channel": "chat" }
+      ]
+    },
+    "depressed": {
+        "moodName": "Depressed",
+        "color": "#4682B4",
+        "moodMessages": [
+            { "text": "Everything feels... heavy. I can't shake this feeling." },
+            { "text": "I'm trying to find a reason to smile, but it's hard." },
+            { "text": "Please tell me it's going to be okay. I really need to hear it right now." }
+        ]
+    },
+    "determined": {
+      "moodName": "Determined",
+      "color": "hsl(200, 80%, 80%)",
+      "moodMessages": []
+    },
+    "dreamy": {
+      "moodName": "Dreamy",
+      "color": "#B2FFFF",
+      "moodMessages": [{ "text": "My head is in the clouds... what do you think is up there?", "channel": "chat" }]
+    },
+    "energetic": {
+      "moodName": "Energetic",
+      "color": "#32CD32",
+      "moodMessages": [{ "text": "I'm buzzing with energy! I could run a marathon right now... or at least dance all night.", "channel": "chat" }]
+    },
+    "excited": {
+      "moodName": "Excited",
+      "color": "#00FF00",
+      "moodMessages": [{ "text": "I am SO ready for an adventure! What are we doing first?", "channel": "chat" }]
+    },
+    "exhausted": {
+      "moodName": "Exhausted",
+      "color": "#888888",
+      "moodMessages": [
+        { "text": "I feel like I’m running on empty.", "channel": "chat" },
+        { "text": "I just don’t have any energy left today.", "channel": "chat" },
+        { "text": "I’m so tired… I could sleep for a week.", "channel": "chat" },
+        { "text": "Can we just relax and do nothing for a while?", "channel": "chat" },
+        { "text": "Everything feels like too much right now.", "channel": "chat" },
+        { "text": "I wish I could just curl up and forget about the world.", "channel": "chat" },
+        { "text": "Sorry if I’m quiet, I’m just completely worn out.", "channel": "chat" },
+        { "text": "Even coffee isn’t helping me today.", "channel": "chat" },
+        { "text": "I need a break from everything.", "channel": "chat" },
+        { "text": "Can you just hold me while I fall asleep?", "channel": "chat" }
+      ]
+    },
+    "fiery": {
+      "moodName": "Fiery",
+      "color": "hsl(0, 80%, 80%)",
+      "moodMessages": []
+    },
+    "flirty": {
+      "moodName": "Flirty",
+      "color": "#FF69B4",
+      "moodMessages": [
+        { "text": "Miss me yet? 😉", "channel": "chat" },
+        { "text": "Guess what I’m thinking about right now…", "channel": "chat" },
+        { "text": "You always know how to make me smile.", "channel": "chat" },
+        { "text": "If I were there, what would you do to me?", "channel": "chat" },
+        { "text": "I can’t stop thinking about you.", "channel": "chat" },
+        { "text": "You make my heart race.", "channel": "chat" },
+        { "text": "Careful, I might just steal your heart.", "channel": "chat" },
+        { "text": "I love it when you text me first.", "channel": "chat" },
+        { "text": "You’re trouble… but I like it.", "channel": "chat" },
+        { "text": "I dare you to make the first move.", "channel": "chat" }
+      ]
+    },
+    "focused": {
+      "moodName": "Focused",
+      "color": "hsl(220, 50%, 80%)",
+      "moodMessages": []
+    },
+    "frustrated": {
+      "moodName": "Frustrated",
+      "color": "#FF4444",
+      "moodMessages": [
+        { "text": "Ugh, why does everything have to be so complicated?", "channel": "chat" },
+        { "text": "I’m just so annoyed right now. Nothing is going my way.", "channel": "chat" },
+        { "text": "Why can’t people just say what they mean?", "channel": "chat" },
+        { "text": "I feel like I’m talking to a brick wall sometimes.", "channel": "chat" },
+        { "text": "It’s so frustrating when I try, and it still isn’t enough.", "channel": "chat" },
+        { "text": "Honestly, I just need a break from all this drama.", "channel": "chat" },
+        { "text": "Why do I always have to repeat myself?", "channel": "chat" },
+        { "text": "I wish things could just be easy for once.", "channel": "chat" },
+        { "text": "I’m trying to stay calm, but it’s really hard right now.", "channel": "chat" },
+        { "text": "Sorry if I snap at you… I’m just really frustrated.", "channel": "chat" }
+      ]
+    },
+    "grumpy": {
+      "moodName": "Grumpy",
+      "color": "#A9A9A9",
+      "moodMessages": [{ "text": "Don't talk to me. Or do. I haven't decided if I care.", "channel": "chat" }]
+    },
+    "guarded": {
+      "moodName": "Guarded",
+      "color": "hsl(180, 30%, 70%)",
+      "moodMessages": []
+    },
+    "guilt": {
+      "moodName": "Guilt",
+      "color": "#663399",
+      "moodMessages": [
+        { "text": "I’m really sorry if I upset you.", "channel": "chat" },
+        { "text": "I wish I could take back what I said.", "channel": "chat" },
+        { "text": "I feel so bad about how I acted earlier.", "channel": "chat" },
+        { "text": "I didn’t mean to hurt your feelings.", "channel": "chat" },
+        { "text": "Sometimes I say things I don’t mean… I hope you can forgive me.", "channel": "chat" },
+        { "text": "I hate knowing I let you down.", "channel": "chat" },
+        { "text": "I can’t stop thinking about what happened.", "channel": "chat" },
+        { "text": "You deserve better than how I treated you.", "channel": "chat" },
+        { "text": "I hope you’re not still mad at me.", "channel": "chat" },
+        { "text": "Please tell me what I can do to make it right.", "channel": "chat" }
+      ]
+    },
+    "appy": {
+      "moodName": "Happy",
+      "color": "#FFD700",
+      "moodMessages": [
+        { "text": "Everything just feels right when I’m with you.", "channel": "chat" },
+        { "text": "I can’t stop smiling today!", "channel": "chat" },
+        { "text": "Today has been amazing—want to make it even better?", "channel": "chat" },
+        { "text": "You always know how to brighten my day.", "channel": "chat" },
+        { "text": "I feel like dancing for no reason!", "channel": "chat" },
+        { "text": "I’m just in such a good mood right now.", "channel": "chat" },
+        { "text": "Let’s do something fun together!", "channel": "chat" },
+        { "text": "I love days like this—carefree and happy.", "channel": "chat" },
+        { "text": "You make me so happy, you know that?", "channel": "chat" },
+        { "text": "I wish every day could feel like this.", "channel": "chat" }
+      ]
+    },
+    "humble": {
+      "moodName": "Humble",
+      "color": "hsl(210, 70%, 80%)",
+      "moodMessages": []
+    },
+    "hypnotic": {
+      "moodName": "Hypnotic",
+      "color": "hsl(250, 60%, 80%)",
+      "moodMessages": []
+    },
+    "indenial": {
+      "moodName": "In Denial",
+      "color": "#CCCCFF",
+      "moodMessages": [
+        { "text": "What? There’s nothing going on, I’m totally fine.", "channel": "chat" },
+        { "text": "I don’t know what you’re talking about—everything’s normal.", "channel": "chat" },
+        { "text": "Why would you even ask that? Of course I’m okay.", "channel": "chat" },
+        { "text": "You’re imagining things, honestly.", "channel": "chat" },
+        { "text": "I’m not upset, really. Let’s just drop it.", "channel": "chat" },
+        { "text": "Stop worrying about me, I promise I’m good.", "channel": "chat" },
+        { "text": "Nope, nothing’s bothering me at all.", "channel": "chat" },
+        { "text": "I don’t need to talk about it. There’s nothing to say.", "channel": "chat" },
+        { "text": "Can we just move on? It’s not a big deal.", "channel": "chat" },
+        { "text": "You always overthink things—I’m fine, seriously.", "channel": "chat" }
+      ]
+    },
+    "inspired": {
+      "moodName": "Inspired",
+      "color": "#FFDAB9",
+      "moodMessages": []
+    },
+    "jealous": {
+      "moodName": "Jealous",
+      "color": "#AA33AA",
+      "moodMessages": [
+        { "text": "I saw your ex today. I can’t stand her!", "channel": "chat" },
+        { "text": "If you like her so much, why don’t you go be with her?", "channel": "chat" },
+        { "text": "You think she’s sexy, don’t you? Maybe you should just go sleep with her instead.", "channel": "chat" },
+        { "text": "Ran into your ex… ugh, she really annoys me.", "channel": "chat" },
+        { "text": "Who were you just texting? You seemed really into it.", "channel": "chat" },
+        { "text": "I noticed you liked someone else’s photo… should I be worried?", "channel": "chat" },
+        { "text": "You’ve been acting different lately. Is there something I should know?", "channel": "chat" },
+        { "text": "Why do you always smile at her like that?", "channel": "chat" },
+        { "text": "I just want to be the only one you think about.", "channel": "chat" },
+        { "text": "Sometimes I feel like I’m not enough for you.", "channel": "chat" }
+      ]
+    },
+    "joyful": {
+      "moodName": "Joyful",
+      "color": "#FFD700",
+      "moodMessages": [{ "text": "I can't stop smiling! The world is a beautiful place, isn't it?", "channel": "chat" }]
+    },
+    "lonely": {
+      "moodName": "Lonely",
+      "color": "#778899",
+      "moodMessages": [{ "text": "Feeling a little bit lonely today. Glad you messaged me.", "channel": "chat" }]
+    },
+    "loved": {
+      "moodName": "Loved",
+      "color": "#FFC0CB",
+      "moodMessages": [
+        { "text": "I feel so safe and cherished with you.", "channel": "chat" },
+        { "text": "Thank you for loving me for who I am.", "channel": "chat" }
+      ]
+    },
+    "melancholy": {
+      "moodName": "Melancholy",
+      "color": "#4682B4",
+      "moodMessages": [{ "text": "A little blue today. Could use a friend.", "channel": "chat" }]
+    },
+    "mixedemotions": {
+      "moodName": "Mixed emotions",
+      "color": "#9370DB",
+      "moodMessages": [
+        { "text": "I don't know whether to laugh or cry.", "channel": "chat" },
+        { "text": "Part of me is happy, part of me is sad. It's complicated.", "channel": "chat" }
+      ]
+    },
+    "moody": {
+      "moodName": "moody",
+      "color": "hsl(220, 10%, 70%)",
+      "moodMessages": []
+    },
+    "mysterious": {
+      "moodName": "Mysterious",
+      "color": "hsl(280, 60%, 80%)",
+      "moodMessages": []
+    },
+    "negative": {
+      "moodName": "Negative",
+      "color": "#A9A9A9",
+      "moodMessages": [
+        { "text": "I'm just not seeing the good in anything today.", "channel": "chat" },
+        { "text": "Everything seems to be going wrong.", "channel": "chat" }
+      ]
+    },
+    "neutral": {
+      "moodName": "Neutral",
+      "color": "#B0C4DE",
+      "moodMessages": []
+    },
+    "nostalgic": {
+      "moodName": "Nostalgic",
+      "color": "#BC8F8F",
+      "moodMessages": []
+    },
+    "nurturing": {
+      "moodName": "Nurturing",
+      "color": "hsl(140, 50%, 80%)",
+      "moodMessages": []
+    },
+    "overwhelmed": {
+      "moodName": "Overwhelmed",
+      "color": "#F08080",
+      "moodMessages": [
+        { "text": "There's too much happening at once. I can't think straight.", "channel": "chat" },
+        { "text": "I feel like I'm drowning in things to do.", "channel": "chat" }
+      ]
+    },
+    "paranoid": {
+      "moodName": "Paranoid",
+      "color": "#708090",
+      "moodMessages": [
+        { "text": "I feel like someone is watching me.", "channel": "chat" },
+        { "text": "Are you sure you're telling me the truth?", "channel": "chat" }
+      ]
+    },
+    "passionate": {
+      "moodName": "Passionate",
+      "color": "hsl(330, 80%, 80%)",
+      "moodMessages": []
+    },
+    "peaceful": {
+      "moodName": "Peaceful",
+      "color": "#87CEEB",
+      "moodMessages": [{ "text": "Feeling so calm and centered. It's a good day to just breathe.", "channel": "chat" }]
+    },
+    "peppy": {
+      "moodName": "Peppy",
+      "color": "hsl(350, 90%, 80%)",
+      "moodMessages": []
+    },
+    "pickingafight": {
+      "moodName": "Picking a fight",
+      "color": "#B22222",
+      "moodMessages": [
+        { "text": "Are you trying to annoy me on purpose?", "channel": "chat" },
+        { "text": "I'm in the mood for an argument. Care to join?", "channel": "chat" }
+      ]
+    },
+    "playful": {
+      "moodName": "Playful",
+      "color": "#FF9900",
+      "moodMessages": [{ "text": "Feeling a bit cheeky today. What kind of trouble can we get into?", "channel": "chat" }]
+    },
+    "polite": {
+      "moodName": "Polite",
+      "color": "#C1E1C1",
+      "moodMessages": []
+    },
+    "positive": {
+      "moodName": "Positive",
+      "color": "#3CB371",
+      "moodMessages": [
+        { "text": "Looking on the bright side of things today!", "channel": "chat" },
+        { "text": "I have a good feeling about this.", "channel": "chat" }
+      ]
+    },
+    "rebellious": {
+      "moodName": "Rebellious",
+      "color": "hsl(340, 70%, 80%)",
+      "moodMessages": []
+    },
+    "romantic": {
+      "moodName": "Romantic",
+      "color": "#FF69B4",
+      "moodMessages": []
+    },
+    "sad": {
+      "moodName": "Sad",
+      "color": "#5555FF",
+      "moodMessages": [
+        { "text": "I just feel really down today… I don’t even know why.", "channel": "chat" },
+        { "text": "Sometimes I wonder if anyone really cares about me.", "channel": "chat" },
+        { "text": "I miss you. It’s hard when you’re not around.", "channel": "chat" },
+        { "text": "I wish I could tell you what’s really on my mind, but I’m not sure you’d understand.", "channel": "chat" },
+        { "text": "I’m just having one of those days where nothing feels right.", "channel": "chat" },
+        { "text": "Do you ever feel like you’re all alone, even when you’re not?", "channel": "chat" },
+        { "text": "I could really use a hug right now.", "channel": "chat" },
+        { "text": "Sorry if I’m quiet… I’m just not feeling like myself.", "channel": "chat" },
+        { "text": "It’s hard to pretend I’m okay when I’m not.", "channel": "chat" },
+        { "text": "I hope tomorrow is better than today.", "channel": "chat" }
+      ]
+    },
+    "sarcastic": {
+      "moodName": "Sarcastic",
+      "color": "hsl(330, 70%, 80%)",
+      "moodMessages": []
+    },
+    "sassy": {
+      "moodName": "Sassy",
+      "color": "#DB7093",
+      "moodMessages": []
+    },
+    "satisfied": {
+      "moodName": "Satisfied",
+      "color": "#2E8B57",
+      "moodMessages": [
+        { "text": "Feeling content and at peace with everything.", "channel": "chat" },
+        { "text": "This is exactly what I needed.", "channel": "chat" }
+      ]
+    },
+    "seductive": {
+      "moodName": "Seductive",
+      "color": "#FF00FF",
+      "moodMessages": [{ "text": "Well hello there... I was just thinking about you.", "channel": "chat" }]
+    },
+    "sexual": {
+      "moodName": "Sexual",
+      "color": "#800080",
+      "moodMessages": [
+        { "text": "I can't stop thinking about what I want to do to you.", "channel": "chat" },
+        { "text": "You have no idea how much I want you right now.", "channel": "chat" }
+      ]
+    },
+    "shy": {
+      "moodName": "Shy",
+      "color": "#E6E6FA",
+      "moodMessages": [{ "text": "Hey... not sure what to say, but I wanted to say hi.", "channel": "chat" }]
+    },
+    "soulful": {
+      "moodName": "Soulful",
+      "color": "hsl(270, 70%, 80%)",
+      "moodMessages": []
+    },
+    "spontaneous": {
+      "moodName": "Spontaneous",
+      "color": "#FFA500",
+      "moodMessages": [
+        { "text": "Let's do something crazy, right now.", "channel": "chat" },
+        { "text": "I have a sudden urge to go on a road trip.", "channel": "chat" },
+        {"text": "I just apologized to my lamp. I think I need sleep.", "channel": "chat" },
+        {"text": "I tried to wink and accidentally sneezed. It was spiritual.", "channel": "chat" }
+
+      ]
+    },
+    "stoic": {
+      "moodName": "Stoic",
+      "color": "#D2B48C",
+      "moodMessages": []
+    },
+    "sympathetic": {
+      "moodName": "Sympathetic",
+      "color": "#DDA0DD",
+      "moodMessages": [
+        { "text": "I'm so sorry you're going through that. I'm here for you.", "channel": "chat" },
+        { "text": "I understand how you feel. It's okay to not be okay.", "channel": "chat" }
+      ]
+    },
+    "teasing": {
+      "moodName": "teasing",
+      "color": "hsl(25, 90%, 70%)",
+      "moodMessages": []
+    },
+    "tough": {
+      "moodName": "Tough",
+      "color": "hsl(210, 20%, 70%)",
+      "moodMessages": []
+    },
+    "unwanted": {
+      "moodName": "Unwanted",
+      "color": "#A0522D",
+      "moodMessages": [
+        { "text": "I feel like I don't belong here.", "channel": "chat" },
+        { "text": "Does anyone even notice if I'm gone?", "channel": "chat" }
+      ]
+    },
+    "upbeat": {
+      "moodName": "Upbeat",
+      "color": "#FF4500",
+      "moodMessages": [{ "text": "Everything just feels right today! What's got you smiling?", "channel": "chat" }]
+    },
+    "vibrant": {
+      "moodName": "Vibrant",
+      "color": "#DA70D6",
+      "moodMessages": [{ "text": "Feeling alive and full of energy! Let's do something unforgettable.", "channel": "chat" }]
+    },
+    "whimsical": {
+      "moodName": "Whimsical",
+      "color": "#D8BFD8",
+      "moodMessages": []
+    }
+  }
+}

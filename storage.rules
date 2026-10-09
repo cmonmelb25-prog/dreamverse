@@ -1,0 +1,88 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // ==========================
+    // HELPERS
+    // ==========================
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() &&
+        request.auth.uid == userId;
+    }
+
+    // ==========================
+    // AVATARS
+    // ==========================
+
+    match /avatars/{userId}/{allPaths=**} {
+      allow read: if true;
+      allow write: if isOwner(userId);
+    }
+
+    // ==========================
+    // POSTS
+    // ==========================
+
+    match /posts/{userId}/{allPaths=**} {
+      allow read: if true;
+      allow write: if isOwner(userId);
+    }
+
+    // ==========================
+    // REELS
+    // ==========================
+
+    match /reels/{reelId}/{allPaths=**} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    // ==========================
+    // CHAT MEDIA
+    // ==========================
+
+    match /chat-media/{chatId}/{allPaths=**} {
+      allow read, write: if isSignedIn();
+    }
+
+    // ==========================
+    // MESSENGER MEDIA
+    // ==========================
+
+    match /messenger-media/{chatId}/{allPaths=**} {
+      allow read, write: if isSignedIn();
+    }
+
+    // ==========================
+    // VOICE MESSAGES
+    // ==========================
+
+    match /voice-messages/{userId}/{allPaths=**} {
+      allow read: if isSignedIn();
+      allow write: if isOwner(userId);
+    }
+
+    // ==========================
+    // PUBLIC ASSETS
+    // ==========================
+
+    match /public/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // ==========================
+    // DEFAULT DENY
+    // ==========================
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

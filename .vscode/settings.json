@@ -1,0 +1,12 @@
+{
+    "IDX.ai.showChatInEditorTab": false,
+    "css.lint.unknownAtRules": "ignore",
+    "editor.inlineSuggest.enabled": false,
+    "workbench.experimental.enableAIAssistance": false,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+    },
+    "js/ts.tsdk.path": "node_modules\\typescript\\lib"
+  }

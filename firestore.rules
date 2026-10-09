@@ -1,0 +1,321 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ==========================
+    // HELPERS (HARDENED)
+    // ==========================
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.admin == true;
+    }
+
+    function uid() {
+      return request.auth.uid;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && uid() == userId;
+    }
+
+    function isValidUserDoc(userId) {
+      return request.resource.data.id == userId;
+    }
+
+    function isExistingOwner(userId) {
+      return isOwner(userId) && resource != null;
+    }
+
+    function isAiChatParticipant(chatId) {
+      return isSignedIn() && (
+        chatId.matches(".*_" + uid()) ||
+        isAdmin()
+      );
+    }
+
+    function hasValidMessengerParticipants() {
+      return isSignedIn() &&
+        request.resource.data.participantIds is list &&
+        request.resource.data.participantIds.size() == 2 &&
+        request.resource.data.participantIds.hasAny([uid()]);
+    }
+
+    function hasValidCallParticipants() {
+      return isSignedIn() &&
+        request.resource.data.participants is list &&
+        request.resource.data.participants.size() == 2 &&
+        request.resource.data.participants.hasAny([uid()]);
+    }
+
+    function isExistingMessengerParticipant() {
+      return isSignedIn() && (
+        request.auth.uid in resource.data.participantIds ||
+        isAdmin()
+      );
+    }
+
+    function isIncomingMessengerParticipant() {
+      return isSignedIn() && (
+        request.auth.uid in request.resource.data.participantIds ||
+        isAdmin()
+      );
+    }
+
+    function isMessengerParticipantForChat(chatId) {
+      return isSignedIn() && (
+        isAdmin() ||
+        request.auth.uid in get(/databases/$(database)/documents/messenger/$(chatId)).data.participantIds
+      );
+    }
+
+    // ==========================
+    // GIFTS
+    // ==========================
+
+    match /gifts/{giftId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn()
+        && request.resource.data.keys().hasOnly(['from', 'to', 'type', 'createdAt', 'meta']);
+      allow update: if isSignedIn();
+      allow delete: if isAdmin();
+    }
+
+    // ==========================
+    // USERS (STRICT)
+    // ==========================
+
+    match /users/{userId} {
+      allow get, list: if isSignedIn();
+
+      allow create: if isOwner(userId) && isValidUserDoc(userId);
+
+      allow update: if (
+        (isExistingOwner(userId) && isValidUserDoc(userId)) ||
+        isAdmin()
+      );
+
+      allow delete: if isExistingOwner(userId) || isAdmin();
+
+      match /deviceTokens/{tokenId} {
+        allow read, write: if isOwner(userId) || isAdmin();
+      }
+
+      match /relationships/{relId} {
+        allow read, write: if isOwner(userId) || isAdmin();
+      }
+
+      match /notifications/{notificationId} {
+        allow read, write: if isOwner(userId) || isAdmin();
+      }
+
+      match /followers/{followerId} {
+        allow read: if isSignedIn();
+        allow write: if isSignedIn() && (
+          request.resource.data.from == uid() ||
+          isAdmin()
+        );
+      }
+
+      match /following/{followedId} {
+        allow read: if isSignedIn();
+        allow write: if isSignedIn() && (
+          request.resource.data.from == uid() ||
+          isAdmin()
+        );
+      }
+
+      match /likes/{likedId} {
+        allow read, write: if isOwner(userId) || isAdmin();
+      }
+
+      match /receivedLikes/{likeId} {
+        allow read, write: if isOwner(userId) || isAdmin();
+      }
+
+      match /skips/{skippedId} {
+        allow read, write: if isOwner(userId) || isAdmin();
+      }
+
+      match /matches/{matchId} {
+        allow read, write: if isOwner(userId) || isAdmin();
+      }
+    }
+
+    // ==========================
+    // AI GIRLS (LOCKED ADMIN)
+    // ==========================
+
+    match /aiGirls/{aiGirlId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // ==========================
+    // POSTS (OWNERSHIP LOCK)
+    // ==========================
+
+    match /posts/{postId} {
+      allow get, list: if isSignedIn();
+
+      allow create: if isSignedIn()
+        && request.resource.data.authorId == uid();
+
+      allow update, delete: if isSignedIn() && (
+        resource.data.authorId == uid() || isAdmin()
+      );
+    }
+
+    // ==========================
+    // REELS
+    // ==========================
+
+    match /reels/{reelId} {
+      allow get, list: if isSignedIn();
+
+      allow create: if isSignedIn()
+        && request.resource.data.authorId == uid();
+
+      allow update, delete: if isSignedIn() && (
+        resource.data.authorId == uid() || isAdmin()
+      );
+
+      match /comments/{commentId} {
+        allow read: if isSignedIn();
+
+        allow create: if isSignedIn()
+          && request.resource.data.userId == uid();
+
+        allow update, delete: if isSignedIn() && (
+          resource.data.userId == uid() || isAdmin()
+        );
+      }
+    }
+
+    // ==========================
+    // AI GIRL CHAT
+    // ==========================
+
+    match /chat/{chatId} {
+      allow read, write: if isAiChatParticipant(chatId);
+
+      match /messages/{messageId} {
+        allow read, write: if isAiChatParticipant(chatId);
+      }
+    }
+
+    // ==========================
+    // MESSENGER (USER TO USER)
+    // ==========================
+
+    match /messenger/{chatId} {
+      allow create: if hasValidMessengerParticipants();
+
+      allow read, list: if isExistingMessengerParticipant();
+
+      allow update: if isExistingMessengerParticipant() && hasValidMessengerParticipants();
+
+      allow delete: if isExistingMessengerParticipant();
+
+      match /messages/{messageId} {
+        allow read, write: if isMessengerParticipantForChat(chatId);
+      }
+    }
+
+    // ==========================
+    // CALLS (FIXED CRASH POINT)
+    // ==========================
+
+    function isMessengerCallParticipant(callId) {
+      return isSignedIn() && (
+        isAdmin() ||
+        request.auth.uid in get(/databases/$(database)/documents/messengerCalls/$(callId)).data.participants
+      );
+    }
+
+    function isMessengerCallParticipantOnDoc() {
+      return isSignedIn() && (
+        isAdmin() ||
+        request.auth.uid in resource.data.participants
+      );
+    }
+
+    match /messengerCalls/{callId} {
+      allow create: if hasValidCallParticipants();
+      allow get, list, update, delete: if isMessengerCallParticipantOnDoc();
+
+      match /signals/{signalId} {
+        allow read, write: if isSignedIn() && (
+          isAdmin() ||
+          request.auth.uid in get(/databases/$(database)/documents/messengerCalls/$(callId)).data.participants
+        );
+      }
+    }
+
+    // ==========================
+    // LIVE
+    // ==========================
+
+    match /live/{docId} {
+      allow read: if true;
+
+      allow create: if isSignedIn() && (
+        request.auth.uid == docId || isAdmin()
+      );
+
+      allow update: if isSignedIn() && (
+        request.auth.uid == docId ||
+        isAdmin() ||
+        request.resource.data.diff(resource.data)
+          .affectedKeys()
+          .hasOnly(['viewerCount', 'heartCount', 'lastTributeAt', 'updatedAt'])
+      );
+
+      allow delete: if isSignedIn() && (
+        request.auth.uid == docId || isAdmin()
+      );
+
+      match /comments/{commentId} {
+        allow read, write: if isSignedIn();
+      }
+
+      match /viewers/{viewerId} {
+        allow read, write: if isSignedIn();
+      }
+    }
+
+    // ==========================
+    // MOODS
+    // ==========================
+
+    match /moods/{moodId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // ==========================
+    // ANALYTICS
+    // ==========================
+
+    match /engagements/{logId} {
+      allow read, write: if isSignedIn();
+    }
+
+    match /reports/{reportId} {
+      allow create: if isSignedIn();
+      allow read, write: if isAdmin();
+    }
+
+    // ==========================
+    // GLOBAL DENY (IMPORTANT)
+    // ==========================
+
+    match /{path=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+'use client';
+
+import { EventEmitter } from 'events';
+import { type User } from 'firebase/auth';
+import { app } from './config';
+import { getAuth } from 'firebase/auth';
+
+/* -------------------------------------------------------------------------- */
+/* SECURITY RULE CONTEXT TYPES                         */
+/* -------------------------------------------------------------------------- */
+
+export type SecurityRuleContext = {
+  path: string;
+  operation: 'get' | 'list' | 'create' | 'update' | 'delete' | 'write';
+  requestResourceData?: any;
+};
+
+interface FirebaseAuthToken {
+  name: string | null;
+  email: string | null;
+  email_verified: boolean;
+  phone_number: string | null;
+  sub: string;
+  firebase: {
+    identities: Record<string, string[]>;
+    sign_in_provider: string;
+    tenant: string | null;
+  };
+}
+
+interface FirebaseAuthObject {
+  uid: string;
+  token: FirebaseAuthToken;
+}
+
+/* -------------------------------------------------------------------------- */
+/* AUTH OBJECT BUILDER (SAFE)                         */
+/* -------------------------------------------------------------------------- */
+
+function buildAuthObject(currentUser: User | null): FirebaseAuthObject | null {
+  if (!currentUser) return null;
+
+  const token: FirebaseAuthToken = {
+    name: currentUser.displayName,
+    email: currentUser.email,
+    email_verified: currentUser.emailVerified,
+    phone_number: currentUser.phoneNumber,
+    sub: currentUser.uid,
+    firebase: {
+      identities: currentUser.providerData.reduce((acc, p) => {
+        if (p.providerId) acc[p.providerId] = [p.uid];
+        return acc;
+      }, {} as Record<string, string[]>),
+      sign_in_provider: currentUser.providerData[0]?.providerId || 'custom',
+      tenant: currentUser.tenantId,
+    },
+  };
+
+  return {
+    uid: currentUser.uid,
+    token,
+  };
+}
+
+/* -------------------------------------------------------------------------- */
+/* REQUEST OBJECT BUILDER FOR ERRORS                      */
+/* -------------------------------------------------------------------------- */
+
+interface SecurityRuleRequest {
+  auth: FirebaseAuthObject | null;
+  method: string;
+  path: string;
+  resource?: { data: any };
+}
+
+function buildRequestObject(context: SecurityRuleContext): SecurityRuleRequest {
+  let authObject: FirebaseAuthObject | null = null;
+
+  try {
+    const auth = getAuth(app);
+    if (auth.currentUser) authObject = buildAuthObject(auth.currentUser);
+  } catch {}
+
+  return {
+    auth: authObject,
+    method: context.operation,
+    path: `/databases/(default)/documents/${context.path}`,
+    resource: context.requestResourceData
+      ? { data: context.requestResourceData }
+      : undefined,
+  };
+}
+
+/* -------------------------------------------------------------------------- */
+/* HUMAN‑READABLE FIRESTORE ERROR CLASS                   */
+/* -------------------------------------------------------------------------- */
+
+function buildErrorMessage(requestObject: SecurityRuleRequest): string {
+  return `Missing or insufficient permissions: The following request was denied by Firestore Security Rules:
+${JSON.stringify(requestObject, null, 2)}`;
+}
+
+export class FirestorePermissionError extends Error {
+  public readonly request: SecurityRuleRequest;
+
+  constructor(context: SecurityRuleContext) {
+    const requestObject = buildRequestObject(context);
+    super(buildErrorMessage(requestObject));
+    this.name = 'FirebaseError';
+    this.request = requestObject;
+
+    Object.setPrototypeOf(this, FirestorePermissionError.prototype);
+  }
+}

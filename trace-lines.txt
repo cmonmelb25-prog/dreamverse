@@ -1,0 +1,73 @@
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name './girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module '@/lib/types' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Louise' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Chloe' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Victoria' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Natasha' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Stevie' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Sofia' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+Loading module as file / folder, candidate module location 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls/Sofia', target file types: TypeScript, JavaScript, Declaration, JSON.
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls/Sofia.ts' exists - use it as a name resolution result.
+======== Module name './girls/Sofia' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls/Sofia.ts'. ========
+======== Resolving module './girls/Alishia' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Charmaine' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Cara' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Izzy' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Michelle' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Melissa' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Kate' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Sarah' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Aaliyah' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Emily' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Alice' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Nailah' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Racheal' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Hana' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Lucia' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Daniela' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Serafina' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Bituin' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module './girls/Anya' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Resolving module '@/lib/types' from 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls/Sofia.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name './server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name './server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
+File 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts' exists - use it as a name resolution result.
+======== Module name '@/lib/server/girls-data' was successfully resolved to 'C:/Users/cmonm/Studio/dreamverse/lib/server/girls-data.ts'. ========
